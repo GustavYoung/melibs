@@ -88,6 +88,14 @@ else
                #exit;
         done
         wait)
+        ( cmdpid="$BASHPID";
+        (omxplayer --genlog --vol -6000 --layer 20 --alpha 1 --dbus_name org.mpris.AdsPlayer3.omxplayer "$entry" >> log_$(date +%Y_%m_%d).txt) \
+        & while ! bash /home/uslu/melibs/fadein.sh;
+        do
+               echo "Todo listo";
+               #exit;
+        done
+        wait)
         date >> log_$(date +%Y_%m_%d).txt;
 	echo "Stop $entry" >> log_$(date +%Y_%m_%d).txt;
         clear;
