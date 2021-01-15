@@ -3,7 +3,10 @@
 #(C) 2017-2019 Mirai Works LLC
 #Disable cursor 
 setterm -cursor off
-sleep 7;
+sleep 2;
+chmod +x /home/uslu/melibs/ssignage_sleep;
+chmod +x /home/uslu/melibs/ssimg_sleep;
+sleep 1;
 
 resolution=$(tvservice -s | grep -oP '[[:digit:]]{1,4}x[[:digit:]]{1,4} ')
 a="1920x1080 "
@@ -75,6 +78,7 @@ else
         sleep 40;
         echo "espera por anuncio sin audio" >> log_$(date +%Y_%m_%d).txt;
         fi
+        date >> log_$(date +%Y_%m_%d).txt;
 #	clear;
         ( cmdpid="$BASHPID";
         (omxiv $boxed -t 45 -T blend -l 20 -k "$entry" >> log_$(date +%Y_%m_%d).txt) \
@@ -84,6 +88,7 @@ else
                #exit;
         done
         wait)
+        date >> log_$(date +%Y_%m_%d).txt;
 	echo "Stop $entry" >> log_$(date +%Y_%m_%d).txt;
         clear;
 	/home/uslu/melibs/ssignage_sleep $TXSEC;
