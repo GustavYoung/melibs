@@ -49,7 +49,7 @@ target_fix='/home/uslu/uxmalstream/streamer/uploads'
 uxmal2_mgrtd='/home/uslu/uxmal_2.0/'
 
 if [ -d "$uxmal2_mgrtd" ]; then
-  echo "App migrada :S"
+  echo "App migrada :S";
   target_fix='/home/uslu/uxmal_2.0/uploads'
 fi
 
@@ -88,6 +88,7 @@ else
                #exit;
         done
         wait)
+        echo "video?";
         ( cmdpid="$BASHPID";
         (omxplayer --genlog --vol -6000 --layer 20 --alpha 1 --dbus_name org.mpris.AdsPlayer3.omxplayer "$entry" >> log_$(date +%Y_%m_%d).txt) \
         & while ! bash /home/uslu/melibs/fadein.sh;
