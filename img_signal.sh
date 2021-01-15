@@ -40,6 +40,17 @@ then
 fi
 echo "$boxed"
 
+#chose of folders
+
+target_fix='/home/uslu/uxmalstream/streamer/uploads'
+uxmal2_mgrtd='/home/uslu/uxmal_2.0/'
+
+if [ -d "$uxmal2_mgrtd" ]; then
+  echo "App migrada :S"
+  target_fix='/home/uslu/uxmal_2.0/uploads'
+fi
+
+
 # infinite loop!
 while true; do
         if ps ax | grep -v grep | grep $SERVICE > /dev/null
@@ -49,27 +60,21 @@ else
         for entry in $IMAGIPATH/*
         do
 	echo "start $entry" >> log_$(date +%Y_%m_%d).txt;
-        if [[ `lsof | grep /home/uslu/elements/Video_chico/` ]]
+        if [[ `lsof | grep $target_fix/parallelads/pl1/` ]]
         then
         sleep 40;
         echo "espera por L activa" >> log_$(date +%Y_%m_%d).txt;
         fi
-        if [[ `lsof | grep /home/uslu/uxmalstream/streamer/uploads/ads/` ]]
+        if [[ `lsof | grep $target_fix/ads/` ]]
         then
         sleep 40;
         echo "espera por anuncio con audio" >> log_$(date +%Y_%m_%d).txt;
         fi
-	if [[ `lsof | grep /home/uslu/uxmal_2.0/uploads/ads/` ]]
+	if [[ `lsof | grep /home/uslu/elements/Spots_sin_audio/` ]]
         then
         sleep 40;
-        echo "espera por anuncio con audio" >> log_$(date +%Y_%m_%d).txt;
+        echo "espera por anuncio sin audio" >> log_$(date +%Y_%m_%d).txt;
         fi
-	if [[ `lsof | grep /home/uslu/elements/Spots_con_audio/` ]]
-        then
-        sleep 40;
-        echo "espera por anuncio con audio" >> log_$(date +%Y_%m_%d).txt;
-        fi
-        date >> log_$(date +%Y_%m_%d).txt;
 #	clear;
         ( cmdpid="$BASHPID";
         (omxiv $boxed -t 45 -T blend -l 20 -k "$entry" >> log_$(date +%Y_%m_%d).txt) \
@@ -79,7 +84,6 @@ else
                #exit;
         done
         wait)
-	date >> log_$(date +%Y_%m_%d).txt;
 	echo "Stop $entry" >> log_$(date +%Y_%m_%d).txt;
         clear;
 	/home/uslu/melibs/ssignage_sleep $TXSEC;
