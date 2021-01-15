@@ -51,22 +51,22 @@ else
 	echo "start $entry" >> log_$(date +%Y_%m_%d).txt;
         if [[ `lsof | grep /home/uslu/elements/Video_chico/` ]]
         then
-        sleep 60;
+        sleep 40;
         echo "espera por L activa" >> log_$(date +%Y_%m_%d).txt;
         fi
         if [[ `lsof | grep /home/uslu/uxmalstream/streamer/uploads/ads/` ]]
         then
-        sleep 60;
+        sleep 40;
         echo "espera por anuncio con audio" >> log_$(date +%Y_%m_%d).txt;
         fi
 	if [[ `lsof | grep /home/uslu/uxmal_2.0/uploads/ads/` ]]
         then
-        sleep 60;
+        sleep 40;
         echo "espera por anuncio con audio" >> log_$(date +%Y_%m_%d).txt;
         fi
 	if [[ `lsof | grep /home/uslu/elements/Spots_con_audio/` ]]
         then
-        sleep 60;
+        sleep 40;
         echo "espera por anuncio con audio" >> log_$(date +%Y_%m_%d).txt;
         fi
         date >> log_$(date +%Y_%m_%d).txt;
