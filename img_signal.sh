@@ -73,7 +73,7 @@ else
 #	clear;
         ( cmdpid="$BASHPID";
         (omxiv $boxed -t 45 -T blend -l 20 -k "$entry" >> log_$(date +%Y_%m_%d).txt) \
-        & while ! bash /home/uslu/ssignage/next_img.sh;
+        & while ! bash /home/uslu/melibs/next_img.sh;
         do
                echo "Todo listo";
                #exit;
@@ -82,7 +82,7 @@ else
 	date >> log_$(date +%Y_%m_%d).txt;
 	echo "Stop $entry" >> log_$(date +%Y_%m_%d).txt;
         clear;
-	/home/uslu/ssignage/ssignage_sleep $TXSEC;
+	/home/uslu/melibs/ssignage_sleep $TXSEC;
         echo "Lapso de tiempo entre anuncios" >> log_$(date +%Y_%m_%d).txt;
         done
 fi
