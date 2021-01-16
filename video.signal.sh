@@ -46,7 +46,6 @@ else
         echo "espera por imagen sin audio" >> log_$(date +%Y_%m_%d).txt;
         fi
         date >> log_$(date +%Y_%m_%d).txt;
-	    clear;
         ( cmdpid="$BASHPID";
         (omxplayer --genlog --vol -8000 --layer 50 --alpha 1 --dbus_name org.mpris.AdsPlayer3.omxplayer "$entry" >> log_$(date +%Y_%m_%d).txt) \
         & while ! bash /home/uslu/melibs/fadein.sh;
@@ -57,7 +56,7 @@ else
         wait)
 	date >> log_$(date +%Y_%m_%d).txt;
 	echo "Stop $entry" >> log_$(date +%Y_%m_%d).txt;
-        clear;
+#        clear;
 	sleep $TXSEC;
         echo "Lapso de tiempo entre anuncios" >> log_$(date +%Y_%m_%d).txt;
         done
