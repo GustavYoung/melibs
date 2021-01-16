@@ -16,5 +16,5 @@ ALPHA=1
     while [  $ALPHA -lt 256 ]; do
             dbus-send --print-reply=literal --session --dest=org.mpris.AdsPlayer3.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.SetAlpha objpath:/not/used int64:$ALPHA >/dev/null;
             let ALPHA=ALPHA+2
-            echo $ALPHA
+            #echo $ALPHA
     done
