@@ -47,7 +47,7 @@ else
         fi
         date >> log_$(date +%Y_%m_%d).txt;
         ( cmdpid="$BASHPID";
-        (omxplayer --genlog --vol -8000 --layer 50 --alpha 2 --dbus_name org.mpris.AdsPlayer3.omxplayer "$entry" >> log_$(date +%Y_%m_%d).txt) \
+        (omxplayer --genlog --vol -8000 --layer 50 --alpha 1 --dbus_name org.mpris.AdsPlayer3.omxplayer "$entry" >> log_$(date +%Y_%m_%d).txt) \
         & while ! bash /home/uslu/melibs/fadein.sh;
         do
                echo "Todo listo";
