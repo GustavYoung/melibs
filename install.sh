@@ -47,4 +47,4 @@ echo "Parchando Modulos...";
   git checkout .;
   git pull;
   sudo cp /home/uslu/melibs/backups/sync.cfg /home/uslu/AdsSync/sync.cfg;
-  slep 1;
+  sleep 1;
