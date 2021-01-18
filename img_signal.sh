@@ -18,7 +18,7 @@ d="320x240 "
 #sudo sh -c “TERM=linux setterm -foreground black -clear >/dev/tty0”
 #Well better if no. So keep it comented
 
-TIMER="2";
+TIMER="3";
 TXSEC="$(($TIMER * 60))";
 
 IMAGIPATH="/home/uslu/elements/imagenes-flotantes";

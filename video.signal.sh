@@ -13,7 +13,7 @@ sleep 2;
 
 #Limpiamos la jodida pantalla?
 #sudo sh -c “TERM=linux setterm -foreground black -clear >/dev/tty0”
-TIMER="1";
+TIMER="4";
 TXSEC="$(($TIMER * 60))";
 
 VIDEOPATH="/home/uslu/elements/Spots_sin_audio";
@@ -29,36 +29,36 @@ while true; do
 else
         for entry in $VIDEOPATH/*
         do
-        echo "start $entry" >> log_$(date +%Y_%m_%d).txt;
+        echo "start $entry" >> vflog_$(date +%Y_%m_%d).txt;
         if [[ `lsof | grep $target_fix/parallelads/pl1/` ]]
         then
         sleep 40;
-        echo "espera por L activa" >> log_$(date +%Y_%m_%d).txt;
+        echo "espera por L activa" >> vflog_$(date +%Y_%m_%d).txt;
         fi
         if [[ `lsof | grep $target_fix/ads/` ]]
         then
         sleep 40;
-        echo "espera por anuncio con audio" >> log_$(date +%Y_%m_%d).txt;
+        echo "espera por anuncio con audio" >> vflog_$(date +%Y_%m_%d).txt;
         fi
 	    if [[ `lsof | grep /home/uslu/elements/imagenes-flotantes` ]]
         then
         sleep 40;
-        echo "espera por imagen sin audio" >> log_$(date +%Y_%m_%d).txt;
+        echo "espera por imagen sin audio" >> vflog_$(date +%Y_%m_%d).txt;
         fi
-        date >> log_$(date +%Y_%m_%d).txt;
+        date >> vflog_$(date +%Y_%m_%d).txt;
         ( cmdpid="$BASHPID";
-        (omxplayer --genlog --vol -8000 --layer 22 --alpha 1 --dbus_name org.mpris.AdsPlayer3.omxplayer "$entry" >> log_$(date +%Y_%m_%d).txt) \
+        (omxplayer --genlog --vol -8000 --layer 22 --alpha 1 --dbus_name org.mpris.AdsPlayer3.omxplayer "$entry" >> vflog_$(date +%Y_%m_%d).txt) \
         & while ! bash /home/uslu/melibs/fadein.sh;
         do
                echo "Todo listo";
                #exit;
         done
         wait)
-	date >> log_$(date +%Y_%m_%d).txt;
-	echo "Stop $entry" >> log_$(date +%Y_%m_%d).txt;
+	date >> vflog_$(date +%Y_%m_%d).txt;
+	echo "Stop $entry" >> vflog_$(date +%Y_%m_%d).txt;
 #        clear;
 	sleep $TXSEC;
-        echo "Lapso de tiempo entre anuncios" >> log_$(date +%Y_%m_%d).txt;
+        echo "Lapso de tiempo entre anuncios" >> vflog_$(date +%Y_%m_%d).txt;
         done
 fi
 done
