@@ -1,6 +1,6 @@
 #!/bin/bash
-#Copyright 2017-2020 Gustavo Santana
-#(C) 2017-2020 Mirai Works LLC
+#Copyright 2017-2021 Gustavo Santana
+#(C) 2017-2021 Mirai Works LLC
 #Desactivamos el puto cursor >P
 #setterm -cursor off
 

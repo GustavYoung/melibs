@@ -1,5 +1,5 @@
 #!/bin/bash
-#Copyright 2019 Gustavo Santana
+#Copyright 2019-2021 Gustavo Santana
 #(C) 2017-2019 Mirai Works LLC
 #Disable cursor 
 setterm -cursor off

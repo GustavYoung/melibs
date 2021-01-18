@@ -1,5 +1,5 @@
 #!/bin/bash
-#Copyright 2018 Gustavo Santana
+#Copyright 2018-2021 Gustavo Santana
 #(C) Mirai Works LLC
 #
 /home/uslu/melibs/ssimg_sleep 40;
