@@ -33,6 +33,11 @@ echo "Parchando Modulos...";
   cd /home/uslu/;
   sleep 1;
   echo "Instalando Flotantes (Imagenes)...";
+  cd /home/uslu/melibs/sauce/omxiv/
+  make ilclient
+  make
+  sudo make install
+  cd
   sudo cp /home/uslu/melibs/ImgPlayer /etc/init.d/ImgPlayer;
   sudo chmod +x /etc/init.d/ImgPlayer;
   sudo update-rc.d ImgPlayer defaults;
