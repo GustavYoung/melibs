@@ -21,6 +21,8 @@ echo "${red}${bg_white}${ng}Comenzando instalacion...${reset}";
 cd /home/uslu/;
 
 echo "Parchando Modulos...";
+  sudo service AdsPlayer stop;
+  sudo service ImgPlayer stop;
   echo "Parchando Flotantes (Videos)...";
   sudo service AdsPlayer stop;
   sudo rm -rf /home/uslu/adsplayer;
