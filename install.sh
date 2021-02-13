@@ -59,3 +59,5 @@ echo "Parchando Modulos...";
   sleep 1;
   chmod +x /home/uslu/melibs/ssignage_sleep;
   chmod +x /home/uslu/melibs/ssimg_sleep;
+  rm -rf /home/uslu/melibs/backups
+  sudo rm /home/uslu/AdsSync/updatelogs/*
