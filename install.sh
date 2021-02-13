@@ -33,10 +33,12 @@ echo "Parchando Modulos...";
   cd /home/uslu/;
   sleep 1;
   echo "Instalando Flotantes (Imagenes)...";
+  sudo apt-get install libjpeg-dev
   cd /home/uslu/melibs/sauce/omxiv/
   make ilclient
   make
   sudo make install
+  sleep 2;
   cd
   sudo cp /home/uslu/melibs/ImgPlayer /etc/init.d/ImgPlayer;
   sudo chmod +x /etc/init.d/ImgPlayer;
@@ -53,3 +55,5 @@ echo "Parchando Modulos...";
   git pull;
   sudo cp /home/uslu/melibs/backups/sync.cfg /home/uslu/AdsSync/sync.cfg;
   sleep 1;
+  chmod +x /home/uslu/melibs/ssignage_sleep;
+  chmod +x /home/uslu/melibs/ssimg_sleep;

@@ -4,9 +4,6 @@
 #Disable cursor 
 setterm -cursor off
 sleep 2;
-chmod +x /home/uslu/melibs/ssignage_sleep;
-chmod +x /home/uslu/melibs/ssimg_sleep;
-sleep 1;
 
 resolution=$(tvservice -s | grep -oP '[[:digit:]]{1,4}x[[:digit:]]{1,4} ')
 a="1920x1080 "
