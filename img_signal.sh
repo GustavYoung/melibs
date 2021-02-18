@@ -78,7 +78,7 @@ else
         date >> log_$(date +%Y_%m_%d).txt;
 #	clear;
         ( cmdpid="$BASHPID";
-        (omxiv $boxed -t 45 -T blend -l 33 -k "$entry" >> log_$(date +%Y_%m_%d).txt) \
+        (omxiv $boxed -t 45 -T blend -l 23 -k "$entry" >> log_$(date +%Y_%m_%d).txt) \
         & while ! bash /home/uslu/melibs/next_img.sh;
         do
                echo "Todo listo";
