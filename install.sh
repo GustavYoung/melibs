@@ -51,13 +51,16 @@ echo "Parchando Modulos...";
   sleep 1;
   echo "Actualizando sincronizador de anuncios...";
   mkdir /home/uslu/melibs/backups
-  sudo cp /home/uslu/AdsSync/sync.cfg /home/uslu/melibs/backups/sync.cfg;
-  cd /home/uslu/AdsSync/;
-  git checkout .;
-  git pull;
-  sudo cp /home/uslu/melibs/backups/sync.cfg /home/uslu/AdsSync/sync.cfg;
+#  sudo cp /home/uslu/AdsSync/sync.cfg /home/uslu/melibs/backups/sync.cfg;
+#  cd /home/uslu/AdsSync/;
+#  git checkout .;
+#  git pull;
+#  sudo cp /home/uslu/melibs/backups/sync.cfg /home/uslu/AdsSync/sync.cfg;
+  cd /home/uslu/
+  git clone https://github.com/GustavYoung/AdsSync.git
+  sudo cp /home/uslu/backup_down/sync.cfg /home/uslu/AdsSync/sync.cfg
   sleep 1;
   chmod +x /home/uslu/melibs/ssignage_sleep;
   chmod +x /home/uslu/melibs/ssimg_sleep;
-  rm -rf /home/uslu/melibs/backups
+#  rm -rf /home/uslu/melibs/backups
   sudo rm /home/uslu/AdsSync/updatelogs/*
