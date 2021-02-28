@@ -57,6 +57,7 @@ echo "Parchando Modulos...";
 #  git pull;
 #  sudo cp /home/uslu/melibs/backups/sync.cfg /home/uslu/AdsSync/sync.cfg;
   cd /home/uslu/
+  sudo rm -rf AdsSync
   git clone https://github.com/GustavYoung/AdsSync.git
   sudo cp /home/uslu/backup_down/sync.cfg /home/uslu/AdsSync/sync.cfg
   sleep 1;
